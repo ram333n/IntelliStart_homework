@@ -4,7 +4,15 @@ import org.example.person.Person;
 import org.example.sort.QuickSorter;
 import org.example.sort.Sorter;
 
+
+/**
+ * This class contains static method, which finds count of unique pairs of weight and height. It uses Quicksort, which implemented in QuickSorter class
+ * Best case complexity : O(n*log(n))
+ * Average case compexity : O(n*log(n))
+ * Worst case complexity : O(n^2)
+ * */
 public class UserCounter {
+    private UserCounter(){}
     public static int count(Person[] array) {
         if(array.length < 1) {
             return 0;

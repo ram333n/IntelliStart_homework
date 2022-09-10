@@ -11,12 +11,6 @@ public class Person {
         this.age = age;
     }
 
-    public Person(Person other) {
-        this.height = other.height;
-        this.weight = other.weight;
-        this.age = other.age;
-    }
-
     public int getHeight() {
         return height;
     }

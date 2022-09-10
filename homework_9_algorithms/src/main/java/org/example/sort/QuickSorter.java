@@ -14,7 +14,7 @@ public class QuickSorter<T> implements Sorter<T> {
         }
 
         int p = partition(array, low, high, comparator);
-        quickSortImpl(array, low, p - 1, comparator);
+        quickSortImpl(array, low, p, comparator);
         quickSortImpl(array, p + 1, high, comparator);
     }
 
@@ -33,7 +33,7 @@ public class QuickSorter<T> implements Sorter<T> {
             }
 
             if(i >= j) {
-                return i;
+                return j;
             }
 
             swap(array, i, j);

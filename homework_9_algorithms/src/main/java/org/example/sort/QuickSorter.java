@@ -2,6 +2,12 @@ package org.example.sort;
 
 import java.util.Comparator;
 
+/**
+ * This class contains Quicksort middle pivot algorithm implementation.
+ * Best case complexity : O(n*log(n))
+ * Average case : O(n*log(n))
+ * Worst case : O(n^2) (when array is almost sorted)
+ * */
 public class QuickSorter<T> implements Sorter<T> {
     @Override
     public void sort(T[] array, Comparator<T> comparator) {

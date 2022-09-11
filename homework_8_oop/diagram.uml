@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="-76.1871145493767" y="-39.173334776392835">org.example.ShapePrinter</node>
+    <node x="191.87743510354522" y="305.71695322659383">org.example.Polygon</node>
+    <node x="126.38902002477167" y="120.59574978983768">org.example.PolygonalChain</node>
+    <node x="422.94198475646715" y="377.8811198000293">org.example.Circle</node>
+    <node x="406.94198475646715" y="86.87233145031946">org.example.Ellipse</node>
+    <node x="229.27159340798926" y="-50.673334776392835">org.example.Shape</node>
+    <node x="3.2812289356693043" y="518.7926273709857">org.example.Triangle</node>
+    <node x="363.3774808268012" y="518.7926273709857">org.example.Rectangle</node>
+    <node x="-61.1871145493767" y="87.59574978983764">org.example.Point</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.example.Polygon" target="org.example.PolygonalChain" relationship="GENERALIZATION">
+      <point x="-7.488415078773556" y="-14.5" />
+      <point x="0.0" y="60.499999999999986" />
+    </edge>
+    <edge source="org.example.Ellipse" target="org.example.Shape" relationship="GENERALIZATION">
+      <point x="1.5243532857311948E-5" y="-115.50033145031946" />
+      <point x="507.942" y="57.0" />
+      <point x="299.272" y="57.0" />
+      <point x="4.065920107336751E-4" y="38.50033477639283" />
+    </edge>
+    <edge source="org.example.PolygonalChain" target="org.example.Shape" relationship="GENERALIZATION">
+      <point x="-2.0024771657745077E-5" y="-60.499749789837686" />
+      <point x="236.389" y="57.0" />
+      <point x="299.272" y="57.0" />
+      <point x="4.065920107336751E-4" y="38.50033477639283" />
+    </edge>
+    <edge source="org.example.Rectangle" target="org.example.Polygon" relationship="GENERALIZATION">
+      <point x="-58.00048082680121" y="3.7262901440726637E-4" />
+      <point x="243.87743510354522" y="533.2930000000001" />
+      <point x="243.87743510354522" y="320.217" />
+      <point x="51.999564896454785" y="4.6773406182865074E-5" />
+    </edge>
+    <edge source="org.example.Circle" target="org.example.Ellipse" relationship="GENERALIZATION">
+      <point x="0.9363184424202586" y="-39.86582077360367" />
+      <point x="508.8783031988874" y="346.51335626757975" />
+      <point x="508.8783031988874" y="316.6119610570237" />
+      <point x="0.9363184424202586" y="114.23962960670423" />
+    </edge>
+    <edge source="org.example.Triangle" target="org.example.Polygon" relationship="GENERALIZATION">
+      <point x="51.99980861648649" y="-2.812749215763688E-4" />
+      <point x="336.0" y="533.2923460960641" />
+      <point x="336.0" y="320.217" />
+      <point x="51.999564896454785" y="4.6773406182865074E-5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="1.1615508885298869" showDependencies="false" x="287.1919332406119" y="256.34770514603616" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

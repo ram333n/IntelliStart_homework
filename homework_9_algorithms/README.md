@@ -1,5 +1,5 @@
 # Homework 9 : algorithms
-[Tests, benchmark](https://github.com/ram333n/IntelliStart_homework/blob/homework-9-algorithms/homework_9_algorithms/src/test/java/org/example/sort/AlgorithmTests.java)
+[Tests, benchmark](https://github.com/ram333n/IntelliStart_homework/blob/develop/homework_9_algorithms/src/test/java/org/example/sort/AlgorithmTests.java)
 1. Implemented and used quicksort middle pivot algorithm
 2. Added comparator in subtask 1 implementation 
 3. Used Quicksort to find unique pairs of weight and height

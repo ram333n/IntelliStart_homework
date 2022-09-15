@@ -1,4 +1,6 @@
-package org.example.lists;
+package org.example.lists.array_list;
+
+import org.example.lists.MyList;
 
 import java.util.Arrays;
 
@@ -43,14 +45,6 @@ public class MyArrayList extends MyList {
         return data[index];
     }
 
-    private void increaseCapacity() {
-        if(size < data.length) {
-            return;
-        }
-
-        data = Arrays.copyOf(data, 2 * data.length);
-    }
-
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
@@ -63,5 +57,13 @@ public class MyArrayList extends MyList {
         }
 
         return builder.append("]").toString();
+    }
+
+    private void increaseCapacity() {
+        if(size < data.length) {
+            return;
+        }
+
+        data = Arrays.copyOf(data, 2 * data.length);
     }
 }

@@ -1,5 +1,7 @@
 package org.example.lists;
 
+import org.example.lists.array_list.MyArrayList;
+import org.example.lists.linked_list.MyLinkedList;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -8,9 +10,13 @@ class MyListTest {
     private void testList(MyList list) {
         assertEquals(0, list.size());
 
+        System.out.println(list);
+
         for(int i = 0; i < 9; i++) {
             list.add(i);
         }
+
+        System.out.println(list);
 
         assertEquals(9, list.size());
         assertEquals(0, list.get(0));
@@ -19,6 +25,8 @@ class MyListTest {
 
         list.add(42);
         list.add(32);
+
+        System.out.println(list);
 
         assertEquals(11, list.size());
         assertEquals(0, list.get(0));
@@ -30,6 +38,8 @@ class MyListTest {
         list.remove(5);
         list.remove(list.size() - 1);
 
+        System.out.println(list);
+
         assertEquals(8, list.size());
         assertEquals(1, list.get(0));
         assertEquals(7, list.get(5));
@@ -37,6 +47,8 @@ class MyListTest {
 
         list.clear();
         assertEquals(0, list.size());
+
+        System.out.println(list);
 
         try {
             list.get(0);
@@ -47,5 +59,10 @@ class MyListTest {
     @Test
     void testArrayList() {
         testList(new MyArrayList());
+    }
+
+    @Test
+    void testLinkedList() {
+        testList(new MyLinkedList());
     }
 }

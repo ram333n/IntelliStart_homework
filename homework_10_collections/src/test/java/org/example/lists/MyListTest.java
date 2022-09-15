@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MyListTest {
-    private void testList(MyList list) {
+    private void testList(MyList<Integer> list) {
         assertEquals(0, list.size());
 
         System.out.println(list);
@@ -58,11 +58,11 @@ class MyListTest {
 
     @Test
     void testArrayList() {
-        testList(new MyArrayList());
+        testList(new MyArrayList<>());
     }
 
     @Test
     void testLinkedList() {
-        testList(new MyLinkedList());
+        testList(new MyLinkedList<>());
     }
 }

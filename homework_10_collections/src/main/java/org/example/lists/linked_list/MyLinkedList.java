@@ -2,23 +2,23 @@ package org.example.lists.linked_list;
 
 import org.example.lists.MyList;
 
-public class MyLinkedList extends MyList {
-    private static class Node {
-        private Object value;
-        private Node next;
-        private Node prev;
+public class MyLinkedList<T> extends MyList<T> {
+    private static class Node<T> {
+        private T value;
+        private Node<T> next;
+        private Node<T> prev;
 
-        public Node(Object value) {
+        public Node(T value) {
             this.value = value;
         }
     }
 
-    private Node head;
-    private Node tail;
+    private Node<T> head;
+    private Node<T> tail;
 
     @Override
-    public void add(Object value) {
-        Node toAdd = new Node(value);
+    public void add(T value) {
+        Node<T> toAdd = new Node<>(value);
         if(tail == null) {
             head = toAdd;
         } else {
@@ -32,7 +32,7 @@ public class MyLinkedList extends MyList {
 
     @Override
     public void remove(int index) {
-        Node toRemove = getNodeByIndex(index);
+        Node<T> toRemove = getNodeByIndex(index);
 
         if(toRemove.prev != null) {
             toRemove.prev.next = toRemove.next;
@@ -52,8 +52,8 @@ public class MyLinkedList extends MyList {
 
     @Override
     public void clear() {
-        for(Node current = head; current != null;) {
-            Node next = current.next;
+        for(Node<T> current = head; current != null;) {
+            Node<T> next = current.next;
             current.value = null;
             current.prev = null;
             current.next = null;
@@ -66,7 +66,7 @@ public class MyLinkedList extends MyList {
     }
 
     @Override
-    public Object get(int index) {
+    public T get(int index) {
         return getNodeByIndex(index).value;
     }
 
@@ -74,7 +74,7 @@ public class MyLinkedList extends MyList {
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append("[");
-        for(Node current = head; current != null; current = current.next) {
+        for(Node<T> current = head; current != null; current = current.next) {
             builder.append(current.value);
             if(current != tail) {
                 builder.append(", ");
@@ -84,9 +84,9 @@ public class MyLinkedList extends MyList {
         return builder.append("]").toString();
     }
 
-    private Node getNodeByIndex(int index) {
+    private Node<T> getNodeByIndex(int index) {
         checkIndex(index);
-        Node current = head;
+        Node<T> current = head;
         for(int i = 0; i < index; i++) {
             current = current.next;
         }

@@ -1,12 +1,12 @@
 package org.example.lists;
 
-public abstract class MyList {
+public abstract class MyList<T> {
     protected int size = 0;
 
-    public abstract void add(Object value);
+    public abstract void add(T value);
     public abstract void remove(int index);
     public abstract void clear();
-    public abstract Object get(int index);
+    public abstract T get(int index);
 
     public int size() {
         return size;

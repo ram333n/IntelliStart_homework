@@ -4,7 +4,7 @@ import org.example.lists.MyList;
 
 import java.util.Arrays;
 
-public class MyArrayList extends MyList {
+public class MyArrayList<T> extends MyList<T> {
     private static final int DEFAULT_CAPACITY = 10;
     private Object[] data;
 
@@ -14,7 +14,7 @@ public class MyArrayList extends MyList {
     }
 
     @Override
-    public void add(Object value) {
+    public void add(T value) {
         increaseCapacity();
         data[size] = value;
         size++;
@@ -40,9 +40,9 @@ public class MyArrayList extends MyList {
     }
 
     @Override
-    public Object get(int index) {
+    public T get(int index) {
         checkIndex(index);
-        return data[index];
+        return (T)data[index];
     }
 
     @Override

@@ -18,7 +18,7 @@ public class MyHashMap<K, V> {
     private int size;
 
     public MyHashMap(int capacity) {
-        table = new Node<>[capacity];
+        table = new Node[capacity];
         size = 0;
     }
 
@@ -27,7 +27,7 @@ public class MyHashMap<K, V> {
     }
 
     public boolean put(K key, V value) {
-        if(findNodeByKey(key) == null) {
+        if(findNodeByKey(key) != null) {
             return false;
         }
 
@@ -98,5 +98,29 @@ public class MyHashMap<K, V> {
         }
 
         return current;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("[");
+        int count = 0;
+
+        for(int i = 0; i < table.length && count < size; i++) {
+            for(Node<K, V> current = table[i]; current != null; current = current.next) {
+                builder.append("{");
+                builder.append(current.key);
+                builder.append(", ");
+                builder.append(current.value);
+                builder.append("}");
+                count++;
+
+                if(count != size) {
+                    builder.append(", ");
+                }
+            }
+        }
+
+        return builder.append("]").toString();
     }
 }

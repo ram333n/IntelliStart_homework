@@ -5,8 +5,6 @@ S
 #src/main/java/org/example/Main.java,0\b\0ba1b9c7a4878802f938e331cc2d8a042087ec6b
 k
 ;src/main/java/org/example/lists/array_list/MyArrayList.java,f\b\fbc40ef6be721f9b604c2759ffa9177ecc9296d3
-_
-/src/test/java/org/example/lists/MyListTest.java,d\0\d025322e3367ff6808a20911fd206c65abe4a9d5
 [
 +src/main/java/org/example/lists/MyList.java,2\a\2a79aad09e81a0907f50b5b2f76e8db95093be27
 \
@@ -16,8 +14,12 @@ _
 m
 =src/main/java/org/example/lists/linked_list/MyLinkedList.java,7\4\741f8f9d998a9e766b182daf758350a8673f0d8a
 `
-0src/test/java/org/example/stack/MyStackTest.java,9\f\9fb4845e7e0198bea5dc8ec4a713c751d104092c
-`
 0src/test/java/org/example/queue/MyQueueTest.java,d\3\d3725d3242fd42a776a3d389820f33175e3ea575
+`
+0src/test/java/org/example/stack/MyStackTest.java,9\f\9fb4845e7e0198bea5dc8ec4a713c751d104092c
 \
 ,src/main/java/org/example/map/MyHashMap.java,1\a\1a58c895e0cf886456cb6569466c79d9bff1ff94
+`
+0src/test/java/org/example/map/MyHashMapTest.java,b\6\b66fa50fef78e3ceafdc5e7d8056474b74e024b8
+_
+/src/test/java/org/example/lists/MyListTest.java,d\0\d025322e3367ff6808a20911fd206c65abe4a9d5

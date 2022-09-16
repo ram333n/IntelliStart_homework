@@ -30,24 +30,27 @@ public class MyLinkedList<T> extends MyList<T> {
         size++;
     }
 
+    public void addFirst(T value) {
+        Node<T> toAdd = new Node<>(value);
+        if(head == null) {
+            tail = toAdd;
+        } else {
+            head.prev = toAdd;
+        }
+
+        toAdd.next = head;
+        head = toAdd;
+        size++;
+    }
+
     @Override
     public void remove(int index) {
-        Node<T> toRemove = getNodeByIndex(index);
+        removeNode(getNodeByIndex(index));
+    }
 
-        if(toRemove.prev != null) {
-            toRemove.prev.next = toRemove.next;
-        } else {
-            head = toRemove.next;
-        }
-
-        if(toRemove.next != null) {
-            toRemove.next.prev = toRemove.prev;
-        } else {
-            tail = toRemove.prev;
-        }
-
-        toRemove = null;
-        size--;
+    @Override
+    public void removeLast() {
+        removeNode(tail);
     }
 
     @Override
@@ -68,6 +71,11 @@ public class MyLinkedList<T> extends MyList<T> {
     @Override
     public T get(int index) {
         return getNodeByIndex(index).value;
+    }
+
+    @Override
+    public T getLast() {
+        return tail.value;
     }
 
     @Override
@@ -92,5 +100,22 @@ public class MyLinkedList<T> extends MyList<T> {
         }
 
         return current;
+    }
+
+    private void removeNode(Node<T> toRemove) {
+        if(toRemove.prev != null) {
+            toRemove.prev.next = toRemove.next;
+        } else {
+            head = toRemove.next;
+        }
+
+        if(toRemove.next != null) {
+            toRemove.next.prev = toRemove.prev;
+        } else {
+            tail = toRemove.prev;
+        }
+
+        toRemove = null;
+        size--;
     }
 }

@@ -58,11 +58,13 @@ class MyListTest {
 
     @Test
     void testArrayList() {
+        System.out.println("ArrayList : ");
         testList(new MyArrayList<>());
     }
 
     @Test
     void testLinkedList() {
+        System.out.println("LinkedList : ");
         testList(new MyLinkedList<>());
     }
 }

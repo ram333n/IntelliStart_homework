@@ -5,8 +5,10 @@ public abstract class MyList<T> {
 
     public abstract void add(T value);
     public abstract void remove(int index);
+    public abstract void removeLast();
     public abstract void clear();
     public abstract T get(int index);
+    public abstract T getLast();
 
     public int size() {
         return size;

@@ -4,9 +4,9 @@ import org.example.lists.MyList;
 
 public class MyLinkedList<T> extends MyList<T> {
     private static class Node<T> {
-        private T value;
-        private Node<T> next;
-        private Node<T> prev;
+        T value;
+        Node<T> next;
+        Node<T> prev;
 
         public Node(T value) {
             this.value = value;

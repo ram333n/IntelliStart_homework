@@ -27,11 +27,12 @@ public class MyHashMap<K, V> {
     }
 
     public boolean put(K key, V value) {
-        if(findNodeByKey(key) != null) {
+        int bucket = getBucketIndex(key);
+
+        if(findNodeByKey(key, bucket) != null) {
             return false;
         }
 
-        int bucket = getBucketIndex(key);
         Node<K, V> toInsert = new Node<>(key, value);
 
         toInsert.next = table[bucket];
@@ -42,12 +43,13 @@ public class MyHashMap<K, V> {
     }
 
     public V remove(K key) {
-        Node<K, V> toRemove = findNodeByKey(key);
+        int bucket = getBucketIndex(key);
+        Node<K, V> toRemove = findNodeByKey(key, bucket);
+
         if(toRemove == null) {
             return null;
         }
 
-        int bucket = getBucketIndex(key);
         Node<K, V> current = table[bucket];
 
         if(current == toRemove) {
@@ -79,7 +81,7 @@ public class MyHashMap<K, V> {
     }
 
     public V get(K key) {
-        Node<K, V> foundNode = findNodeByKey(key);
+        Node<K, V> foundNode = findNodeByKey(key, getBucketIndex(key));
         return foundNode == null ? null : foundNode.value;
     }
 
@@ -87,8 +89,8 @@ public class MyHashMap<K, V> {
         return key.hashCode() % table.length;
     }
 
-    private Node<K, V> findNodeByKey(K key) {
-        Node<K, V> current = table[getBucketIndex(key)];
+    private Node<K, V> findNodeByKey(K key, int bucket) {
+        Node<K, V> current = table[bucket];
 
         while(current != null) {
             if(current.key.equals(key)) {

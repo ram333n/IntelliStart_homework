@@ -15,8 +15,6 @@ m
 =src/main/java/org/example/lists/linked_list/MyLinkedList.java,7\4\741f8f9d998a9e766b182daf758350a8673f0d8a
 `
 0src/test/java/org/example/stack/MyStackTest.java,9\f\9fb4845e7e0198bea5dc8ec4a713c751d104092c
-\
-,src/main/java/org/example/map/MyHashMap.java,1\a\1a58c895e0cf886456cb6569466c79d9bff1ff94
 `
 0src/test/java/org/example/map/MyHashMapTest.java,b\6\b66fa50fef78e3ceafdc5e7d8056474b74e024b8
 `
@@ -25,3 +23,5 @@ _
 /src/test/java/org/example/lists/MyListTest.java,d\0\d025322e3367ff6808a20911fd206c65abe4a9d5
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+\
+,src/main/java/org/example/map/MyHashMap.java,1\a\1a58c895e0cf886456cb6569466c79d9bff1ff94

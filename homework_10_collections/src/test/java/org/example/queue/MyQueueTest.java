@@ -1,12 +1,13 @@
 package org.example.queue;
 
+import org.example.queue.exceptions.EmptyMyQueueException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class MyQueueTest {
     @Test
-    void testQueue() {
+    void testQueue() throws EmptyMyQueueException {
         System.out.println("Queue : ");
         MyQueue<Integer> queue = new MyQueue<>();
 

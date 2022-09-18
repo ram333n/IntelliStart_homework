@@ -1,38 +1,85 @@
 package org.example.stack;
 
-import org.example.lists.array_list.MyArrayList;
+import org.example.stack.exceptions.EmptyMyStackException;
+
+import java.util.EmptyStackException;
 
 public class MyStack<T> {
-    private final MyArrayList<T> list;
+    private static class Node<T> {
+        T value;
+        Node<T> next;
+
+        public Node(T value) {
+            this.value = value;
+        }
+    }
+
+    private Node<T> head;
+    private int size;
 
     public MyStack() {
-        this.list = new MyArrayList<>();
+        this.size = 0;
     }
 
     public void push(T value) {
-        list.add(value);
+        Node<T> toPush = new Node<>(value);
+        toPush.next = head;
+        head = toPush;
+        size++;
     }
 
     public void clear() {
-        list.clear();
+        for(Node<T> current = head; current != null; ) {
+            Node<T> next = current.next;
+            current.next = null;
+            current.value = null;
+            current = null;
+            current = next;
+        }
+
+        head = null;
+        size = 0;
     }
 
     public int size() {
-        return list.size();
+        return size;
     }
 
-    public T peek() {
-        return list.getLast();
+    public T peek() throws EmptyMyStackException {
+        checkIsEmpty();
+        return head.value;
     }
 
-    public T pop() {
-        T result = list.getLast();
-        list.removeLast();
+    public T pop() throws EmptyMyStackException {
+        checkIsEmpty();
+        T result = head.value;
+        Node<T> toRemove = head;
+        head = toRemove.next;
+
+        toRemove.next = null;
+        toRemove = null;
+        size--;
+
         return result;
     }
 
     @Override
     public String toString() {
-        return list.toString();
+        StringBuilder builder = new StringBuilder();
+        builder.append("[");
+        for(Node<T> current = head; current != null; current = current.next) {
+            builder.append(current.value);
+            if(current.next != null) {
+                builder.append(", ");
+            }
+        }
+
+        return builder.append("]").toString();
+    }
+
+    private void checkIsEmpty() throws EmptyMyStackException {
+        if(head == null) {
+            throw new EmptyMyStackException("MyStack is empty");
+        }
     }
 }

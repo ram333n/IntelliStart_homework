@@ -9,19 +9,9 @@ k
 +src/main/java/org/example/lists/MyList.java,2\a\2a79aad09e81a0907f50b5b2f76e8db95093be27
 \
 ,src/main/java/org/example/queue/MyQueue.java,8\2\82d47e0e5a400ada4dc960747174c5244759282d
-\
-,src/main/java/org/example/stack/MyStack.java,0\8\08300bbf2be5ca1f5be99bcf8c28d95758c802d9
-m
-=src/main/java/org/example/lists/linked_list/MyLinkedList.java,7\4\741f8f9d998a9e766b182daf758350a8673f0d8a
-`
-0src/test/java/org/example/stack/MyStackTest.java,9\f\9fb4845e7e0198bea5dc8ec4a713c751d104092c
 `
 0src/test/java/org/example/map/MyHashMapTest.java,b\6\b66fa50fef78e3ceafdc5e7d8056474b74e024b8
 `
 0src/test/java/org/example/queue/MyQueueTest.java,d\3\d3725d3242fd42a776a3d389820f33175e3ea575
 _
 /src/test/java/org/example/lists/MyListTest.java,d\0\d025322e3367ff6808a20911fd206c65abe4a9d5
-9
-	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-\
-,src/main/java/org/example/map/MyHashMap.java,1\a\1a58c895e0cf886456cb6569466c79d9bff1ff94

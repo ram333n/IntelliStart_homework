@@ -2,6 +2,8 @@ package org.example.stack;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.EmptyStackException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class MyStackTest {
@@ -30,5 +32,12 @@ class MyStackTest {
         stack.clear();
         assertEquals(0, stack.size());
         System.out.println(stack);
+
+        try {
+            stack.pop();
+            fail();
+        } catch(EmptyStackException e) {
+            assertEquals(0, stack.size());
+        }
     }
 }

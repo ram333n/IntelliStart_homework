@@ -1,7 +1,6 @@
 package org.example.stack;
 
-import org.example.lists.array_list.MyArrayList;
-import org.example.lists.linked_list.MyLinkedList;
+import org.example.stack.exceptions.EmptyMyStackException;
 
 import java.util.EmptyStackException;
 
@@ -19,7 +18,7 @@ public class MyStack<T> {
     private int size;
 
     public MyStack() {
-        size = 0;
+        this.size = 0;
     }
 
     public void push(T value) {
@@ -46,12 +45,12 @@ public class MyStack<T> {
         return size;
     }
 
-    public T peek() {
+    public T peek() throws EmptyMyStackException {
         checkIsEmpty();
         return head.value;
     }
 
-    public T pop() {
+    public T pop() throws EmptyMyStackException {
         checkIsEmpty();
         T result = head.value;
         Node<T> toRemove = head;
@@ -78,9 +77,9 @@ public class MyStack<T> {
         return builder.append("]").toString();
     }
 
-    private void checkIsEmpty() {
+    private void checkIsEmpty() throws EmptyMyStackException {
         if(head == null) {
-            throw new EmptyStackException();
+            throw new EmptyMyStackException("MyStack is empty");
         }
     }
 }

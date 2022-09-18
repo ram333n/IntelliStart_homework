@@ -30,27 +30,9 @@ public class MyLinkedList<T> extends MyList<T> {
         size++;
     }
 
-    public void addFirst(T value) {
-        Node<T> toAdd = new Node<>(value);
-        if(head == null) {
-            tail = toAdd;
-        } else {
-            head.prev = toAdd;
-        }
-
-        toAdd.next = head;
-        head = toAdd;
-        size++;
-    }
-
     @Override
     public void remove(int index) {
         removeNode(getNodeByIndex(index));
-    }
-
-    @Override
-    public void removeLast() {
-        removeNode(tail);
     }
 
     @Override
@@ -71,11 +53,6 @@ public class MyLinkedList<T> extends MyList<T> {
     @Override
     public T get(int index) {
         return getNodeByIndex(index).value;
-    }
-
-    @Override
-    public T getLast() {
-        return tail.value;
     }
 
     @Override

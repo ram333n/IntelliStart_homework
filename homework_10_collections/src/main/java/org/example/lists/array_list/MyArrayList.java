@@ -32,11 +32,6 @@ public class MyArrayList<T> extends MyList<T> {
     }
 
     @Override
-    public void removeLast() {
-        remove(size - 1);
-    }
-
-    @Override
     public void clear() {
         for(int i = 0; i < size; i++) {
             data[i] = null;
@@ -48,11 +43,6 @@ public class MyArrayList<T> extends MyList<T> {
     public T get(int index) {
         checkIndex(index);
         return (T)data[index];
-    }
-
-    @Override
-    public T getLast() {
-        return (T)data[size - 1];
     }
 
     @Override

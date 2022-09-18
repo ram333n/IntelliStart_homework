@@ -1,5 +1,6 @@
 package org.example.stack;
 
+import org.example.stack.exceptions.EmptyMyStackException;
 import org.junit.jupiter.api.Test;
 
 import java.util.EmptyStackException;
@@ -8,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MyStackTest {
     @Test
-    void testStack() {
+    void testStack() throws EmptyMyStackException {
         System.out.println("Stack : ");
         MyStack<Integer> stack = new MyStack<>();
 
@@ -36,7 +37,7 @@ class MyStackTest {
         try {
             stack.pop();
             fail();
-        } catch(EmptyStackException e) {
+        } catch(EmptyMyStackException e) {
             assertEquals(0, stack.size());
         }
     }

@@ -23,9 +23,9 @@ m
 0src/test/java/org/example/queue/MyQueueTest.java,d\3\d3725d3242fd42a776a3d389820f33175e3ea575
 \
 ,src/main/java/org/example/queue/MyQueue.java,8\2\82d47e0e5a400ada4dc960747174c5244759282d
-\
-,src/main/java/org/example/map/MyHashMap.java,1\a\1a58c895e0cf886456cb6569466c79d9bff1ff94
 [
 +src/main/java/org/example/lists/MyList.java,2\a\2a79aad09e81a0907f50b5b2f76e8db95093be27
 k
 ;src/main/java/org/example/lists/array_list/MyArrayList.java,f\b\fbc40ef6be721f9b604c2759ffa9177ecc9296d3
+\
+,src/main/java/org/example/map/MyHashMap.java,1\a\1a58c895e0cf886456cb6569466c79d9bff1ff94

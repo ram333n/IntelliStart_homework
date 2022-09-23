@@ -18,5 +18,8 @@ public class Main {
 
         System.out.println(TaskSolutions.getOddNames(testInput));
         System.out.println(TaskSolutions.toUpperCaseAndSort(testInput));
+
+        System.out.println(TaskSolutions.sortSerializedNumbers(new String[] {"1, 2, 0", "4, 5", "-3, 7"}));
+
     }
 }

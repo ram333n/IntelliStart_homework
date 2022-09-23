@@ -28,6 +28,7 @@ public final class TaskSolutions {
     public static String sortSerializedNumbers(String[] array) { //task 3
         return Arrays.stream(String.join(",", array).split("\s*,\s*"))
                 .map(String::trim)
+                .filter((str) -> !str.isEmpty())
                 .mapToInt(Integer::parseInt)
                 .sorted()
                 .mapToObj(Integer::toString)

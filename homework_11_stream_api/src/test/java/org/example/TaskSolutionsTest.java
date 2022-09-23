@@ -50,14 +50,20 @@ class TaskSolutionsTest {
         String[] input1 = {"1, 2, 0", "4, 5"};
         String[] input2 = {"3, 1, 2", "      -1        ", "9,  10"};
         String[] input3 = {" 2     "};
+        String[] input4 = {" \t"};
+        String[] input5= {"", "2"};
 
         String expected1 = "0, 1, 2, 4, 5";
         String expected2 = "-1, 1, 2, 3, 9, 10";
         String expected3 = "2";
-
+        String expected4 = "";
+        String expected5 = "2";
+        
         assertEquals(expected1, TaskSolutions.sortSerializedNumbers(input1));
         assertEquals(expected2, TaskSolutions.sortSerializedNumbers(input2));
         assertEquals(expected3, TaskSolutions.sortSerializedNumbers(input3));
+        assertEquals(expected4, TaskSolutions.sortSerializedNumbers(input4));
+        assertEquals(expected5, TaskSolutions.sortSerializedNumbers(input5));
     }
 
 }

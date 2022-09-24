@@ -1,11 +1,11 @@
 package org.example;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public final class TaskSolutions {
     private TaskSolutions() {}
@@ -33,5 +33,9 @@ public final class TaskSolutions {
                 .sorted()
                 .mapToObj(Integer::toString)
                 .collect(Collectors.joining(", "));
+    }
+
+    public static Stream<Long> generateStreamOfLongs(long a, long c, long m) { //task 4
+        return Stream.iterate(0L, i -> (a * i + c) % m);
     }
 }

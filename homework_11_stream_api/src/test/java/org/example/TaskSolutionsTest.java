@@ -3,6 +3,7 @@ package org.example;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -68,6 +69,7 @@ class TaskSolutionsTest {
 
     @Test
     void testGenerateStreamOfLongs() {
+        final long seed = 0L;
         final long a = 25_214_903_917L;
         final long c = 11;
         final long m = 1L << 48;
@@ -84,10 +86,34 @@ class TaskSolutionsTest {
         expected.add(137_139_456_763_464L);
         expected.add(148_267_022_728_371L);
 
-        List<Long> actualNumbers = TaskSolutions.generateStreamOfLongs(a, c, m)
+        List<Long> actualNumbers = TaskSolutions.generateStreamOfLongs(seed, a, c, m)
                 .limit(10)
                 .toList();
 
         assertEquals(expected, actualNumbers);
+    }
+
+    @Test
+    void testZip() {
+        List<Integer> first1 = List.of(1, 3, 5, 7, 9, 11);
+        List<Integer> second1 = List.of(2, 4, 6, 8);
+        List<Integer> expected1 = List.of(1, 2, 3, 4, 5, 6, 7, 8);
+
+        List<Integer> first2 = List.of(1, 3, 5, 7, 9);
+        List<Integer> second2 = List.of();
+        List<Integer> expected2 = List.of();
+
+        List<Integer> first3 = List.of();
+        List<Integer> second3 = first2;
+        List<Integer> expected3 = List.of();
+
+        List<Integer> first4 = List.of(1, 3, 5, 7, 9, 11);
+        List<Integer> second4 = List.of(2, 4, 6, 8, 10, 12, 14, 16);
+        List<Integer> expected4 = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+
+        assertEquals(expected1, TaskSolutions.zip(first1.stream(), second1.stream()).toList());
+        assertEquals(expected2, TaskSolutions.zip(first2.stream(), second2.stream()).toList());
+        assertEquals(expected3, TaskSolutions.zip(first3.stream(), second3.stream()).toList());
+        assertEquals(expected4, TaskSolutions.zip(first4.stream(), second4.stream()).toList());
     }
 }

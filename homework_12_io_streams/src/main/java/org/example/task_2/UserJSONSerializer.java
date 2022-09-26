@@ -2,7 +2,7 @@ package org.example.task_2;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import org.example.PathBuilder;
+import org.example.util.PathBuilder;
 
 import java.io.*;
 import java.util.ArrayList;

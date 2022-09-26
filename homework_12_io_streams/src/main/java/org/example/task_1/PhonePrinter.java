@@ -1,6 +1,6 @@
 package org.example.task_1;
 
-import org.example.PathBuilder;
+import org.example.util.PathBuilder;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

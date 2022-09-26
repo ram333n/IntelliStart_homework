@@ -1,5 +1,7 @@
 package org.example.task_1;
 
+import org.example.PathBuilder;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -27,7 +29,7 @@ public class PhonePrinter {
     }
 
     public static void main(String[] args) {
-        PhonePrinter printer = new PhonePrinter("file_task_1.txt");
+        PhonePrinter printer = new PhonePrinter(PathBuilder.getPath(".", "input", "task_1.txt"));
         printer.printPhoneNumbers();
     }
 }

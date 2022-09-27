@@ -7,7 +7,6 @@ public class MyQueue<T> {
     private static class Node<T> {
         T value;
         Node<T> next;
-        Node<T> prev;
 
         public Node(T value) {
             this.value = value;
@@ -25,13 +24,12 @@ public class MyQueue<T> {
     public void add(T value) {
         Node<T> toAdd = new Node<>(value);
         if(head == null) {
-            tail = toAdd;
+            head = toAdd;
         } else {
-            head.prev = toAdd;
+            tail.next = toAdd;
         }
 
-        toAdd.next = head;
-        head = toAdd;
+        tail = toAdd;
         size++;
     }
 
@@ -39,7 +37,6 @@ public class MyQueue<T> {
         for(Node<T> current = head; current != null;) {
             Node<T> next = current.next;
             current.value = null;
-            current.prev = null;
             current.next = null;
             current = next;
         }
@@ -55,22 +52,19 @@ public class MyQueue<T> {
 
     public T peek() throws EmptyMyQueueException {
         checkIsEmpty();
-        return tail.value;
+        return head.value;
     }
 
     public T poll() throws EmptyMyQueueException {
         checkIsEmpty();
-        T result = tail.value;
-        Node<T> toRemove = tail;
+        T result = head.value;
+        Node<T> toRemove = head;
 
-        if(toRemove.prev != null) {
-            toRemove.prev.next = toRemove.next;
-        } else {
-            head = toRemove.next;
+        if(tail == toRemove) {
+            tail = null;
         }
 
-        tail = toRemove.prev;
-
+        head = head.next;
         toRemove = null;
         size--;
         return result;

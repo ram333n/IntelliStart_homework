@@ -13,6 +13,10 @@ class MyQueueTest {
 
         assertEquals(0, queue.size());
 
+        queue.add(1);
+        assertEquals(1, queue.poll()); //check corner case
+        assertEquals(0, queue.size());
+
         System.out.println(queue);
         for(int i = 0; i < 5; i++) {
             queue.add(i);

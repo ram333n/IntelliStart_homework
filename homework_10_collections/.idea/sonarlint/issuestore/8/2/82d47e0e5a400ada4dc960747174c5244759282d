@@ -1,4 +1,6 @@
 
-s	java:S127,"XRefactor the code in order to not assign to this loop counter from within the loop body.(Í¡ßz8ô‘¡‚µ0
+l	java:S127)"XRefactor the code in order to not assign to this loop counter from within the loop body.(Í¡ßz
 R
-java:S1854J"<Remove this useless assignment to local variable "toRemove".(³²¼»
+java:S1854D"<Remove this useless assignment to local variable "toRemove".(³²¼»
+X
+java:S1128"6Remove this unused import 'org.example.stack.MyStack'.(ìËû˜ùÿÿÿÿ8öýªï·0

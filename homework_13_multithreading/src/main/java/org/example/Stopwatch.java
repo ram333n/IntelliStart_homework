@@ -2,31 +2,29 @@ package org.example;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 
 public class Stopwatch {
+    private static int seconds = 0;
+
+    private static void passSecond() {
+        System.out.printf("Passed %d seconds from program start%n", ++seconds);
+    }
+
     public static void main(String[] args) {
-        int seconds = 0;
+        ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(2);
 
-        Thread thread = new Thread(() -> {
-            while (true) {
-                try {
-                    Thread.sleep(5_000);
-                    System.out.println("Passed 5 seconds");
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        });
+        scheduler.scheduleWithFixedDelay(
+                Stopwatch::passSecond,
+                1,
+                1,
+                TimeUnit.SECONDS);
 
-        thread.start();
-
-        while (true) {
-            try {
-                Thread.sleep(1_000);
-                System.out.printf("Passed %d seconds from program start%n", ++seconds);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        }
+        scheduler.scheduleWithFixedDelay(
+                () -> System.out.println("Passed 5 seconds"),
+                5,
+                5,
+                TimeUnit.SECONDS);
     }
 }

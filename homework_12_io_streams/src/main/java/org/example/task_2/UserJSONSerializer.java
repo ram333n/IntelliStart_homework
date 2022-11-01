@@ -7,6 +7,7 @@ import org.example.util.PathBuilder;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class UserJSONSerializer {
@@ -23,12 +24,20 @@ public class UserJSONSerializer {
             scanner.nextLine(); //it's useless :)
 
             String currentName = "";
-            String currentAge = "";
+            String currentAgeString = "";
 
             while(scanner.hasNext()) {
                 currentName = scanner.next();
-                currentAge = scanner.next();
-                users.add(new User(currentName, Integer.parseInt(currentAge)));
+                int currentAge = 0;
+
+                try {
+                    currentAgeString = scanner.next();
+                    currentAge = Integer.parseInt(currentAgeString);
+                } catch (NumberFormatException | NoSuchElementException e) {
+                    currentAge = -1;
+                }
+
+                users.add(new User(currentName, currentAge));
             }
 
             Gson gson = new GsonBuilder().setPrettyPrinting().create();

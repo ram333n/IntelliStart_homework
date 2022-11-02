@@ -20,11 +20,9 @@
     "age": 11
   },
   {
-    "name": "invalidInput1",
-    "age": -1
+    "name": "invalidInput1"
   },
   {
-    "name": "invalidInput2",
-    "age": -1
+    "name": "invalidInput2"
   }
 ]

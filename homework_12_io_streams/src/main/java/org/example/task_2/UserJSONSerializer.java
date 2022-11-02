@@ -28,13 +28,13 @@ public class UserJSONSerializer {
 
             while(scanner.hasNext()) {
                 currentName = scanner.next();
-                int currentAge = 0;
+                Integer currentAge = 0;
 
                 try {
                     currentAgeString = scanner.next();
                     currentAge = Integer.parseInt(currentAgeString);
                 } catch (NumberFormatException | NoSuchElementException e) {
-                    currentAge = -1;
+                    currentAge = null;
                 }
 
                 users.add(new User(currentName, currentAge));

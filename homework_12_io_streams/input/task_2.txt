@@ -4,5 +4,5 @@ ryan 30
 roman 19
 petro 23
 viktor 11
-invalidInput1 ababab11
+invalidInput1 11ababab11
 invalidInput2

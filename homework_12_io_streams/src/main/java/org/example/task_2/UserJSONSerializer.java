@@ -34,7 +34,7 @@ public class UserJSONSerializer {
                     currentAgeString = scanner.next();
                     currentAge = Integer.parseInt(currentAgeString);
                 } catch (NumberFormatException | NoSuchElementException e) {
-                    currentAge = null;
+                    continue;
                 }
 
                 users.add(new User(currentName, currentAge));
